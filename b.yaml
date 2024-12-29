@@ -58,8 +58,8 @@ action:
             current_index: "{{ (repeat.index + cycle_offset) % colors | length }}"
         - service: light.turn_on
           target:
-            entity_id: "{{ lights[repeat.index - 1 }}
-                      data:
+            entity_id: "{{ lights[repeat.index - 1 }}"
+          data:
             color_name: "{{ colors[current_index] }}"
             transition: "{{ transition_speed }}"
         - delay:
